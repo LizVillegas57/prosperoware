@@ -1,0 +1,57 @@
+header{
+	background-color: $light-gray;
+	nav{
+		background-color: $light-gray;
+	    padding: 0 20px;
+		ul{
+			@extend %clearfix;
+		}
+		h1{
+			line-height: 36px;
+			span, .material-icons{
+				display: inline-block;
+				color: $gray;
+				line-height: normal;
+	    		height: auto;
+	    		font-size: 32px;
+			}
+			span{
+				@include raleway-medium();
+			    font-size: 20px;
+    			text-transform: uppercase;
+			}
+			.material-icons{
+				display: block;
+			    float: left;
+			    margin: 17px 10px 0 0;
+			    color: $blue;
+			}
+		}
+	}
+	.menu{
+		@extend %clearfix;
+		ul{
+			width: 50%;
+			margin: 20px 0;
+			text-align: center;
+			li{
+				display: inline-block;
+				width: 25%;
+				a{
+					display: block;
+					i, span{
+						display: block;
+					}
+					i{
+						font-size:2.5rem;
+					}
+					span{
+						font-size: 12px;
+    					text-transform: uppercase;
+    					@include raleway-medium();
+					}
+				}
+			}
+		}
+	}
+}

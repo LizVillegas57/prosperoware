@@ -1,0 +1,214 @@
+// Animation
+  @mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};      
+  }
+
+// After and before
+  @mixin after-before(){
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    clear: both;
+  }
+
+// Border radius
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+  }
+
+// Breakpoints
+  @mixin max-screen($max){
+    @include mq($max-width: $max) {
+      @content;
+    }
+  }
+  @mixin min-screen($min){
+    @include mq($min-width: $min) {
+      @content;
+    }
+  }
+
+// Box shadow
+  @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow:inset $top $left $blur $color;
+      -moz-box-shadow:inset $top $left $blur $color;
+      box-shadow:inset $top $left $blur $color;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+    }
+  }
+
+// Clearfix
+  %clearfix {
+    *zoom: 1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+// Flexbox
+  @mixin flexbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+// Generic transform
+  @mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+  }
+
+// Keyframes
+  @mixin keyframes($animation-name) {
+      @-webkit-keyframes #{$animation-name} {
+          @content;
+      }
+      @-moz-keyframes #{$animation-name} {
+          @content;
+      }  
+      @-ms-keyframes #{$animation-name} {
+          @content;
+      }
+      @-o-keyframes #{$animation-name} {
+          @content;
+      }  
+      @keyframes #{$animation-name} {
+          @content;
+      }
+  }
+
+// Landscape Mobile
+  @mixin mobile-landscape {
+    @media only screen and (min-device-width: 240px) and (max-device-width: 740px)  and (orientation: landscape) {
+      @content;
+    }
+  }
+
+// Max width styles
+  @mixin max-width-1440(){
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  @mixin max-width-1440-imp(){
+    max-width: 1440px;
+    margin: 0 auto !important;
+  }  
+  @mixin max-width-1280(){
+    max-width:1280px;
+    padding:80px;
+    margin: 0 auto;
+    @include max-screen(1279px) {
+      padding:80px 60px 60px;
+    }
+    @include max-screen(767px) {
+      padding: 30px 20px 10px;
+    }
+  }
+    @mixin max-width-1280-imp(){
+    max-width:1280px;
+    padding:80px;
+    margin: 0 auto !important;
+    @include max-screen(1279px) {
+      padding:80px 60px 60px;
+    }
+    @include max-screen(767px) {
+      padding:30px 20px 10px;
+    }
+  }
+
+// Opacity
+  @mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+
+// Rotate
+  @mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+  }
+
+// Transition
+  @mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+
+// Utility
+  @mixin font-smoothing() {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @mixin image-rendering() {
+    // deal with blurry background images in Chrome
+    // http://stackoverflow.com/a/35142072
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  @mixin background-primary-transparent($opacity) {
+    background: rgba(20,117,186,$opacity);
+  }
+
+// Vertical align
+  @mixin vertical-align() {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+//Fonts
+  @mixin raleway-light(){
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+  }
+  @mixin raleway-regular(){
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+  @mixin raleway-medium(){
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+  }
+  @mixin raleway-semibold(){
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+  }
+  @mixin raleway-bold(){
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+  }
+  @mixin raleway-black(){
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+  }

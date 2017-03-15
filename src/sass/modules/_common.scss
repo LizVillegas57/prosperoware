@@ -1,0 +1,68 @@
+html,-icon
+body {
+  overflow-x: hidden;
+}
+body {
+  @include font-smoothing();
+  @include image-rendering();
+  @include raleway-regular();
+  background: $white;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color:$black;
+  position:relative;
+  //Anchor styles
+    a {
+      cursor: pointer;
+      @include transition(color .5s ease);
+      &:hover, &:focus, &:active{
+        text-decoration: none;
+      }
+    }
+
+  //Ul and li styles
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style-type: none;
+      }
+    }
+
+  //Titles and paragraphs
+    h1{
+      margin: 0;
+    }
+    p{
+      margin: 0;
+    }
+  
+  //Button styles
+    button{
+      border:none;
+      outline: none;
+      cursor: pointer;
+      position:relative;
+      &:hover, &:focus, &:active{
+        outline: none;
+      }
+    }
+
+  .collection.with-header .collection-header{
+    background-color: $blue;
+    color: $white;
+  }
+  .modal-content{
+    border:none;
+    box-shadow:none;
+  }
+  .waves-light.btn{
+    background-color: $blue;
+    margin-left: 10px;
+    &:hover{
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+form{
+	.radios{
+		padding: 0 20px;
+		li{
+			display: inline-block;
+		    padding: 0 50px 0 0;
+			label{
+				&:before{
+					border: 2px solid $blue !important;
+				}
+				&:after{
+					background-color:  $blue !important;
+				}
+			}
+		}
+	}
+	.middle{
+		padding: 20px;
+	}
+	.select-wrapper{
+		span{
+			&.caret{
+				border:none;
+			}
+		}
+	}
+   	.input-field  {
+   		label{
+   			color: $blue;
+   		}
+	   	input[type=text]{
+			&:focus{
+				border-bottom: 1px solid $blue;
+	     		box-shadow: 0 1px 0 0 $blue;
+				+ label {
+			     	color: $blue;
+			   	}
+			}
+			&.valid {
+	     		border-bottom: 1px solid $blue;
+	     		box-shadow: 0 1px 0 0 $blue;
+	   		}
+	   		&.invalid {
+	     		border-bottom: 1px solid red;
+	     		box-shadow: 0 1px 0 0 red;
+	   		}
+	   	}
+   	}
+   	.chips{
+   		&.focus{
+   			border-bottom: 1px solid $blue;
+     		box-shadow: 0 1px 0 0 $blue;
+   		}
+   	}
+   	.chip{
+		background-color:$blue;
+		color: $white;
+   	}
+   	.dropdown-content li>span {
+	    color: $blue;
+	}
+	.picker__date-display,
+	.picker__day--selected, .picker__day--selected:hover, 
+	.picker--focused .picker__day--selected{
+		background-color:$blue;
+	}
+	.picker__close, .picker__today,
+	.picker__day.picker__day--today{
+		color: $blue;
+	}
+	.picker__weekday-display {
+    	background-color: #144469;
+	}
+	.clockpicker-canvas-bg-trans {
+	    fill:rgba(0, 128, 226,0.2);
+	}
+	.clockpicker-display{
+		color: #5cb8ff;
+	}
+	.btn-floating.btn-flat.active,
+	.clockpicker-tick.active, .clockpicker-tick:hover {
+	    background-color: $blue;
+	    color: $white;
+	}
+	.clockpicker-canvas line {
+    	stroke: rgba(0, 128, 226,0.2);
+	}
+	.clockpicker-canvas-bearing,
+	.clockpicker-canvas-bg {
+	    fill: rgba(0, 128, 226,0.2);
+	}
+}

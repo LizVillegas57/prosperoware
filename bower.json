@@ -1,0 +1,24 @@
+{
+  "name": "prosperoware",
+  "description": "Prosperoware",
+  "main": "index.html",
+  "authors": [
+    "Liz Villegas"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~3.1.0",
+    "bootstrap-sass": "~3.3.7"
+  },
+  "devDependencies": {
+    "materialize": "^0.98.0",
+    "materialize-clockpicker": "^0.1.1"
+  }
+}
